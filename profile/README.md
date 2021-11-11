@@ -4,9 +4,9 @@ Computer Vision Analytics for Surf-spots
 
 ## Overview
 
-This repo includes the components that make up the [SurfSight.ai](http://surfline.ai) Computer Vision Analytics (CVA) platform: 
+This repo includes the components that make up the [SurfSight.ai](https://surfline.ai) Computer Vision Analytics (CVA) platform: 
 
-![CVA System](https://github.com/BavarianToolbox/surfsight/blob/main/figures/CVA_System.png "CVA System")
+![CVA System](https://github.com/SurfSight/blob/master/.github/figures/CVA_System.png "CVA System")
 
 The primary purpose of the platform is to extract information from surf-spot webcams using computer vision, aggregate valuable insights from the extracted information, and expose the insights to the end user in a digestible and actionable manner. The platform consists of 5 primary components:
 
@@ -22,7 +22,7 @@ More detail on the individual components below.
 
 Training is conducted using the [TensorFlow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) on TPUs. The entire configuration of a single training run is defined in a config file, and individual training runs are conducted as jobs on the Google Cloud AI Platform using a custom Docker image. This combination of the TF2 OD API and AI Platform allows for quick training iteration. The only two changing factors are the dataset and the training configuration, both of which are defined in the config file. Training on new datasets and/or with different training parameters is a simple as uploading a new config file to a Google Storage bucket and submitting a job with the new configuration to the AI Platform.
 
-![Training Pipeline](https://github.com/SurfSight/.github/figures/Training_Pipeline.png "Training Pipeline")
+![Training Pipeline](https://github.com/SurfSight/blob/master/.github/figures/Training_Pipeline.png "Training Pipeline")
 
 ### Endpoint
 
@@ -44,7 +44,7 @@ A standard REST API sitting on top of the postgres instances. This allows for ea
 
 The front end is a basic web application that consumes data from the spot tables and renders it in a simple and useful form. As the functionality of the platform is increased (more models are added for additional insights and more data is written to the database tables) new features can be added to the frontend to visualize the new insights.
 
-![Frontend UI](https://github.com/BavarianToolbox/surfsight/blob/main/figures/Frontend_UI.png "Frontend UI")
+![Frontend UI](https://github.com/SurfSight/blob/master/.github/figures/Frontend_UI.png "Frontend UI")
 
 ## Next Steps
 
