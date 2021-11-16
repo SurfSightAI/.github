@@ -1,4 +1,4 @@
-# surfsight
+# SurfSight
 
 Computer Vision Analytics for Surf-spots
 
